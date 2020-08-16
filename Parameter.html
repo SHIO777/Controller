@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>PythonでTextの値を書き換える</title> 
+    <script type="text/javascript" src="/webiopi.js"></script>
+    <script type="text/javascript"></script>
+    <style type="text/css"></style>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="input" maxlength="4" oninput="func1()">
+      <input type = "button" value="送信" id="submit1" onclick="func2()">
+     
+    </form>
+    <td>      <tr>
+        表示欄:<span id="output"></span>
+        <br>
+        <br>
+        現在の値:<span id="current"></span>
+      </tr>
+    </td>
+    <form>
+       rangemax:<span id="ramax"></span>
+       <input type = "button" value="更新" id="Readpy" onclick="Readpython()">
+    </form>  
+    <script>
+      var x = document.getElementById("input");
+      var y = document.getElementById("output");
+      var z = document.getElementById("current");
+      var haha = document.getElementById("ramax");
+
+      function Readpython(){
+        webiopi().callMacro("Currentvalue",10, CallBackNumber2);
+      };
+      function CallBackNumber2(macro,args,number)
+      {
+        haha.innerHTML = number;
+      };
+      
+      
+      function func1(){
+        y.innerHTML = x.value;
+      };
+      function func2(){
+        var value = x.value;
+        if (value<1000){
+          alert("無効です");
+        }else if(value>2000){
+          alert("無効です");
+        }else{ 
+          webiopi().callMacro("SaveNUMBER", value);
+          webiopi().callMacro("LoadNUMBER", value, CallBackNumber);
+        };
+      };
+      function CallBackNumber(macro,args,number)
+        {z.innerHTML = number;};
+    </script>
+  </body>
+</html>

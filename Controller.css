@@ -1,0 +1,30 @@
+.SS1{
+    
+    transform:rotate(90deg);
+    position:absolute;
+    top:50%;
+    right:10%;    
+}
+#myRange1{
+    transform:scale(2,4);
+}
+
+
+.SS2{
+    position:absolute;
+    top:50%;
+    left:20%; 
+}
+#myRange2{
+    transform:scale(2,4);
+}
+.stearing{
+    position:absolute;
+    top:10%;
+    
+}
+#out2{
+    position:absolute;
+    top:10%;
+
+}
