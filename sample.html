@@ -1,0 +1,122 @@
+<!DOCTIPE html>
+<head>
+    <meta charset="utf-8">
+    <!--<link rel="stylesheet" href="sample.css">-->
+    <style type="text/css">
+       /*メニューのやつ*/
+
+                .acd-check{
+                    display: none;
+                }
+                .acd-label{
+                    background: #333;
+                    color: #fff;
+                    display: block;
+                    margin-bottom:0px;
+                    padding-left:25px;
+                    padding-right:25px;
+                    width:0px;
+                }
+                .acd-content{
+                    border: 1px solid #333;
+                    height: 0;
+                    opacity: 0;
+                    padding: 0 10px;
+                    transition: .5s;
+                    visibility: hidden;
+                }
+                .acd-check:checked + .acd-label + .acd-content{
+                    background-color: #6d6d6d;
+                    height: 75px;
+                    opacity: 1;
+                    visibility: visible;
+                    margin-bottom:1px;
+                    padding-left:25px;
+                    padding-right:25px;
+                    width:80px;
+                }
+
+                /*メニューここまで*/
+
+
+
+                html,body{
+                overflow: hidden
+                }
+                body{
+                    background-color:#ffffff;
+                }
+
+
+                .link{
+                color:#060b3d;
+                font-size:25px; 
+                }
+                .netflix{
+                    color:#b7090c;
+                    font-size:40px;
+                }
+                p{
+                    color:#e253a7;
+                    font-size:45px;
+                    background: -webkit-linear-gradient(0deg, #ff0004, #fff600,#00ff19,#00f6ff,#4c00ff,#ff00ff);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                .range1{
+                position:absolute; 
+                bottom:50%;
+                transform:scale(1,4);
+                left:10%;
+                height: 30px;
+                width:40%;
+                }
+                .range2{
+                    /*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
+                position:absolute; 
+                bottom:50%;
+                right:10%;
+                transform:rotate(-90deg);
+                height:30px;
+                width:40%;
+
+                }
+                #rara{
+                    
+                }
+
+</style>
+        
+</head>
+
+<body>
+    
+    <!--メニューのやつ-->
+    
+    <input id="acd-check1" class="acd-check" type="checkbox">
+    <label class="acd-label" for="acd-check1">♪</label>
+    <div class="acd-content">
+        <a href="sample.html" style="color:#fff;">右利き</a><br>
+        <a href="sample-lefthanded.html" style="color:#fff;">左利き</a><br>
+        <a href="adjustmentpanel.html" style="color:#fff;">調節</a>
+    </div>
+    
+    <!--メニューここまで-->
+    
+    <a href="https://www.colordic.org/picker">カラーピッカー</a>
+  
+    
+    
+    <div class="link">
+        <a href="https://www.netflix.com/jp/" style="color:#870000;">ここをクリック</a>すると<span class="netflix">Netflix</span>にログインできるよ！<br>
+    </div>
+    <div>
+        <a href="https://www.netflix.com/title/80075595" style="color:#009da5">これ</a>はおすすめのやつです。
+    </div>
+    <p>メカトロニクスって...たのしい！</p>
+    <input type="range" class="range1" min="0" max="20" value="10" ><br>
+    <div>
+    <input type="range" class="range2" min="0" max="20" value="10">
+    </div>
+
+</body>

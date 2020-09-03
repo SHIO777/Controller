@@ -1,0 +1,93 @@
+<!DOCTIPE html>
+<head>
+    <meta charset="utf-8">
+    <!--<link rel="stylesheet" href="adjustmentpanel.css">-->
+    <style type="text/css">
+                /*メニューのやつ*/
+
+        .acd-check{
+            display: none;
+        }
+        .acd-label{
+            background: #333;
+            color: #fff;
+            display: block;
+            margin-bottom:0px;
+            padding-left:25px;
+            padding-right:25px;
+            width:0px;
+        }
+        .acd-content{
+            border: 1px solid #333;
+            height: 0;
+            opacity: 0;
+            padding: 0 10px;
+            transition: .5s;
+            visibility: hidden;
+        }
+        .acd-check:checked + .acd-label + .acd-content{
+            background-color: #6d6d6d;
+            height: 75px;
+            opacity: 1;
+            visibility: visible;
+            margin-bottom:1px;
+            padding-left:25px;
+            padding-right:25px;
+            width:80px;
+        }
+
+        /*メニューここまで*/
+
+
+        html,body{
+        overflow: hidden
+        }
+        #SV1{
+            position:absolute; 
+            transform:scale(2,2);
+            top:25%;
+            right:40%;
+            width:20%;
+            height:5%;
+            font-size:3vmin;
+        }
+        #SV2{
+            position:absolute; 
+            transform:scale(2,2);
+            top:45%;
+            right:40%;
+            width:20%;
+            height:5%;
+            font-size:3vmin;
+        }
+        #SV3{
+            position:absolute;
+            transform:scale(2,2);
+            top:65%;
+            right:40%;
+            width:20%;
+            height:5%;;
+            font-size:3vmin;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!--メニューのやつ-->
+    
+    <input id="acd-check1" class="acd-check" type="checkbox">
+    <label class="acd-label" for="acd-check1">♪</label>
+    <div class="acd-content">
+        <a href="sample.html" style="color:#fff;">右利き</a><br>
+        <a href="sample-lefthanded.html" style="color:#fff;">左利き</a><br>
+        <a href="adjustmentpanel.html" style="color:#fff;">調節</a>
+    </div>
+    
+    <!--メニューここまで-->
+    
+    <input type="number" id="SV1" value="0"><br>
+    <input type="number" id="SV2" value="0"><br>
+    <input type="number" id="SV3" value="0"><br>
+    
+</body>
