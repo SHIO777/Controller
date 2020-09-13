@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>PythonでTextの値を書き換える</title> 
+    <script type="text/javascript" src="/webiopi.js"></script>
+    <script type="text/javascript"></script>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        function setMin( $min ) {
+            var $elementReference = document.getElementById( "sample" );
+            $elementReference.min = $min;
+            var $min = $elementReference.min;
+            document.getElementById( "sampleOutputMin" ).innerHTML = $min;
+            var $value = $elementReference.value;
+            document.getElementById( "sampleOutput" ).innerHTML = $value;
+        }
+        function getValue() {
+            var $elementReference = document.getElementById( "sample" );
+            var $value = $elementReference.value;
+            document.getElementById( "sampleOutput" ).innerHTML = $value;
+        }
+    </script>
+<body>
+    <p>
+        <button onclick="setMin(-100);">-100</button>
+        <button onclick="setMin(-50);">-50</button>
+        <button onclick="setMin(-25);">-25</button>
+        <button onclick="setMin(0);">0</button>
+        <button onclick="setMin(25);">25</button>
+        <button onclick="setMin(50);">50</button>
+    </p>
+    <p>レンジ入力欄に入力可能な最小の数値：<span id="sampleOutputMin">0</span></p>
+    <p>レンジ入力欄の値：<span id="sampleOutput">50</span></p>
+    <p>レンジ入力欄：<input type="range" value="50" id="sample" onmousemove="getValue()" onchange="getValue()"></p>
+</body>
+</html>

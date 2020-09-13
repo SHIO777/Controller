@@ -8,6 +8,7 @@ import datetime
 path = "/home/pi/work/0816/"   #自分で指定する
 filename = "kakikae.txt"       #予めテキストファイル作っておく
 filename2 = "rangemax.txt"
+filename3= "neutral.txt"       #タイヤの中立位置調整
 
 webiopi.setDebug()
 pi=pigpio.pi()
@@ -68,9 +69,35 @@ def Currentvalue(val):
     return "%d"%(value)
 
 
-
 #シャットダウン実行関数
 @webiopi.macro
 def ShutCmd():
     proc.call("sudo killall sudo", shell=True)
     proc.call("sudo /sbin/shutdown -h now", shell=True)
+
+
+
+##from adjustmentpannel
+#タイヤの中立位置設定　***0913追加***************
+@webiopi.macro
+def Change(val):
+    file=open(path + filename3, "r")
+    value=int(file.read())
+    file.close()
+    after_val = value+val
+
+    file=open(path + filename3, "w")
+    file.write(after_val)
+    file.close()
+
+    file=open(path + filename3, "r")
+    read_val = int(file.read())
+    file.close()
+    pi.set_servo_pulsewidth(SV_1,int(read_val))
+
+@webiopi.macro
+def reload(val):
+    file=open(path + filename3, 'r')
+    value=int(file.read())
+    file.close()
+    return '%d'%(value)
